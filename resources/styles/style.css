@@ -1,29 +1,31 @@
+/* Light Green: RGB(189, 255, 75), #bdff48
+Medium Green: RGB(0, 210, 158), #00d29e */
+
+header {
+    margin: 0px;
+    padding: 0px;
+}
+
 .navbar {
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
-    border-bottom: 1px solid lightgrey;
     font-family: Lexend;
     display: inline-flex;
     justify-content: center;
-    /* 
-    Dark mode .navbar:
-    background-color: #242424;
-    color: white; */
+    background-color: #292929;
+    color: white;
 }
 
-.navbar-container {
+.desktop-navbar {
     width: 70%;
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.moblie-container {
-    width: 90%;
+.mobile-navbar {
     display: none;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .navbar .logo-container {
@@ -35,7 +37,7 @@
     width: 40px;
 }
 
-.navbar .logo-text {
+.desktop-navbar .logo-text {
     margin-left: 10px;
     font-size: 30px;
     position: relative;
@@ -59,14 +61,201 @@
     transition: 0.2s;
 }
 
-@media (max-width: 1100px) {
+.intro-banner {
+    background: linear-gradient(45deg, rgba(0, 210, 158, 1) 25%, rgba(189, 255, 72, 1) 100%);
 
-    .navbar-container {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+}
+
+.intro-content {
+    width: 65%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.intro-content .intro-left {
+
+    color: white;
+    font-family: Lexend;
+    text-align: center;
+
+    width: 350px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.intro-left h1 {
+    font-size: 80px;
+    text-transform: uppercase;
+}
+
+.intro-left h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+
+    margin-top: 10px;
+}
+
+.intro-left button {
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 10px;
+    width: 70%;
+    color: #00d29e;
+    font-family: Lexend;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 40px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.intro-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+}
+
+.intro-right img {
+    width: 100%;
+}
+
+.mission-statement {
+    background-color: #292929;
+    color: white;
+    font-family: Lexend;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-statement h2 {
+    font-size: 25px;
+    width: 60%;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.product-description {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.descriptions {
+    text-align: center;
+    display: grid;
+    width: 70%;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 50px;
+}
+
+.description {
+    width: 60%;
+    height: auto;
+    background-color: #00d29e;
+    border-radius: 60px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 8px 10px -5px #888888;
+    transition: box-shadow .3s ease;
+}
+
+.description:hover {
+    box-shadow: 0px 12px 15px -8px #555555;
+    position: relative;
+    bottom: 10px;
+}
+
+.description p {
+    font-size: 20px;
+    font-family: Lexend;
+    color: white;
+    line-height: 1.2;
+}
+
+.footer {
+    background-color: #292929;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-family: Lexend;
+    font-size: 50px;
+    width: 100%;
+    border-bottom: 10px solid #292929;
+}
+
+@media only screen and (max-width: 850px) {
+
+    .desktop-navbar {
         display: none;
     }
 
-    .moblie-container {
-        display: inline-flex;
+    .navbar {
+        height: 50px;
+        padding-top: 0px;
+        padding-bottom: 4px;
     }
 
+    .mobile-navbar {
+        width: 90%;
+        height: 55px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-navbar .logo-img {
+        width: 40px;
+        margin-right: 10px;
+    }
+
+    .mobile-navbar .logo-text {
+        font-size: 30px;
+        position: relative;
+        bottom: 2px;
+
+    }
+
+    .intro-right {
+        display: none;
+    }
+
+    .mission-statement h2 {
+        font-size: 25px;
+        width: 70%;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .descriptions {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
